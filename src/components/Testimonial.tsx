@@ -14,11 +14,14 @@ const Testimonial = () => {
           <span className="block size-3 bg-primary rounded-full" />
         </div>
         <blockquote className="text-2xl md:text-4xl lg:text-5xl leading-tight text-balance font-light">
-          "A verdadeira cura não é consertar o que está quebrado, mas lembrar da luz serena e intacta que sempre esteve ali."
+          "Não façais da casa de meu Pai casa de comércio."
         </blockquote>
         <cite className="text-sm uppercase tracking-widest text-primary not-italic font-medium font-body">
-          — Elena Maris, Fundadora
+          — Jesus Cristo, João 2:16
         </cite>
+        <p className="text-muted-foreground text-sm leading-relaxed max-w-lg">
+          Este espaço é gratuito e dedicado à luz. Todo conhecimento aqui compartilhado pertence à humanidade — assim como os mestres sempre ensinaram.
+        </p>
       </motion.div>
     </section>
   );

@@ -4,7 +4,6 @@ import heroImage from "@/assets/hero-sacred.jpg";
 const Hero = () => {
   return (
     <header id="practice" className="relative z-10 px-6 md:px-12 pt-12 md:pt-24 pb-24 md:pb-48 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-6 items-end">
-      {/* Ambient light */}
       <div className="absolute -top-[20%] -right-[10%] w-[60vw] h-[60vw] rounded-full bg-background/60 blur-[120px] pointer-events-none mix-blend-overlay" />
       <div className="absolute top-[40%] -left-[20%] w-[50vw] h-[50vw] rounded-full bg-gold-light/20 blur-[140px] pointer-events-none" />
 
@@ -29,7 +28,7 @@ const Hero = () => {
         >
           <div className="w-12 h-px bg-primary shrink-0 mt-3" />
           <p className="text-muted-foreground text-sm leading-relaxed">
-            Desenterre a sabedoria atemporal codificada no seu ser. Um santuário para recalibração espiritual, fundamentado em verdades ancestrais e pura frequência divina.
+            Desenterre a sabedoria atemporal codificada no seu ser. Um santuário de conhecimento unindo os ensinamentos de todos os Messias Solares, física quântica e a luz do Deus único.
           </p>
         </motion.div>
         <motion.div

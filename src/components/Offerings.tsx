@@ -6,29 +6,29 @@ import transmissionImg from "@/assets/offering-transmission.jpg";
 const offerings = [
   {
     number: "01",
-    label: "Currículo",
-    title: "O Framework Iniciático",
+    label: "Sabedoria",
+    title: "Os Messias Solares",
     description:
-      "Uma transmissão digital de doze semanas projetada para desmontar padrões condicionados e reconstruir sua base energética a partir da raiz.",
-    cta: "Ver Programação",
+      "Uma jornada pelos ensinamentos de Jesus, Buda, Krishna e todos os grandes mestres que trouxeram a luz divina à humanidade. O fio dourado que une todas as tradições sagradas.",
+    cta: "Contemplar",
     image: curriculumImg,
   },
   {
     number: "02",
-    label: "Consultoria",
-    title: "Leitura de Geometria Sagrada",
+    label: "Ciência",
+    title: "Física Quântica & o Divino",
     description:
-      "Uma auditoria energética individual mapeando as interseções da sua arquitetura de vida com o design original da sua alma.",
-    cta: "Agendar Sessão",
+      "Onde a ciência encontra o sagrado. Explore como a física quântica revela a inteligência suprema que governa cada átomo do universo e além da compreensão humana.",
+    cta: "Explorar",
     image: consultationImg,
   },
   {
     number: "03",
-    label: "Transmissão",
-    title: "Frequências de Alabastro",
+    label: "Frequência",
+    title: "O Deus Único & Universal",
     description:
-      "Uma biblioteca de artefatos auditivos de tom puro para limpar traumas densos e iluminar a memória celular adormecida.",
-    cta: "Ouvir Áudio",
+      "A compreensão de uma inteligência suprema e amorosa que controla este pequeno planeta, todo o universo e dimensões que o ser humano ainda não consegue compreender.",
+    cta: "Meditar",
     image: transmissionImg,
   },
 ];
@@ -40,16 +40,15 @@ const Offerings = () => {
         <h2 className="text-4xl md:text-5xl">
           Os Caminhos
           <br />
-          <span className="text-primary italic">Estruturais</span>
+          <span className="text-primary italic">da Luz</span>
         </h2>
         <div className="text-muted-foreground text-xs uppercase tracking-widest md:text-right">
-          Selecione seu método de
+          Trilhas de estudo para
           <br />
-          realinhamento estrutural
+          o despertar da consciência
         </div>
       </div>
 
-      {/* Mobile: stacked cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-foreground/10 border border-foreground/10">
         {offerings.map((offering, i) => (
           <motion.div
