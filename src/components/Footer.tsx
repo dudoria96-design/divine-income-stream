@@ -14,16 +14,16 @@ const Footer = () => {
           <div>
             <h3 className="font-serif-display text-2xl text-primary mb-4">Aura Sagrada</h3>
             <p className="text-sm leading-relaxed opacity-70 max-w-xs">
-              Seu santuário para recalibração espiritual e despertar interior. Caminhe na luz.
+              Um espaço gratuito de sabedoria universal. Unindo os ensinamentos dos grandes mestres, ciência e a luz do Deus único.
             </p>
           </div>
 
           <div>
             <div className="text-xs uppercase tracking-widest text-primary mb-4 font-bold">Caminhos</div>
             <ul className="space-y-3 text-sm opacity-70">
-              <li><a href="#offerings" className="hover:text-primary transition-colors">O Framework Iniciático</a></li>
-              <li><a href="#offerings" className="hover:text-primary transition-colors">Geometria Sagrada</a></li>
-              <li><a href="#offerings" className="hover:text-primary transition-colors">Frequências de Alabastro</a></li>
+              <li><a href="#offerings" className="hover:text-primary transition-colors">Os Messias Solares</a></li>
+              <li><a href="#offerings" className="hover:text-primary transition-colors">Física Quântica & o Divino</a></li>
+              <li><a href="#offerings" className="hover:text-primary transition-colors">O Deus Único & Universal</a></li>
             </ul>
           </div>
 
@@ -38,7 +38,7 @@ const Footer = () => {
         </motion.div>
 
         <div className="border-t border-primary/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-50">
-          <span>© 2026 Aura Sagrada. Todos os direitos reservados.</span>
+          <span>© 2026 Aura Sagrada. Todo conhecimento é livre.</span>
           <span className="uppercase tracking-widest">Caminhando na luz divina</span>
         </div>
       </div>
