@@ -38,7 +38,7 @@ const Hero = () => {
           className="mt-10 flex items-center gap-6"
         >
           <a
-            href="#offerings"
+            href="#messengers"
             className="group flex items-center gap-4 text-sm uppercase tracking-widest hover:text-primary transition-colors font-medium"
           >
             <span>Iniciar a jornada</span>

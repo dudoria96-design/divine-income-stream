@@ -21,9 +21,9 @@ const Footer = () => {
           <div>
             <div className="text-xs uppercase tracking-widest text-primary mb-4 font-bold">Caminhos</div>
             <ul className="space-y-3 text-sm opacity-70">
-              <li><a href="#offerings" className="hover:text-primary transition-colors">Os Messias Solares</a></li>
-              <li><a href="#offerings" className="hover:text-primary transition-colors">Física Quântica & o Divino</a></li>
-              <li><a href="#offerings" className="hover:text-primary transition-colors">O Deus Único & Universal</a></li>
+              <li><a href="#messengers" className="hover:text-primary transition-colors">Os Mensageiros Solares</a></li>
+              <li><a href="#quantum" className="hover:text-primary transition-colors">Física Quântica & o Verbo</a></li>
+              <li><a href="#pillars" className="hover:text-primary transition-colors">Os Sete Pilares da Luz</a></li>
             </ul>
           </div>
 
