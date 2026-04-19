@@ -20,7 +20,7 @@ const Foundation = () => {
           Você não está construindo algo novo. Está removendo a poeira de um monumento que sempre existiu.
         </h2>
         <a
-          href="#offerings"
+          href="#messengers"
           className="group inline-flex items-center gap-4 text-sm uppercase tracking-widest hover:text-primary transition-colors"
         >
           <span>Iniciar a escavação</span>
