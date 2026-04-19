@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
@@ -6,23 +7,25 @@ const Navbar = () => {
 
   return (
     <nav className="relative z-10 flex items-center justify-between px-6 md:px-12 py-8 uppercase tracking-[0.2em] text-[0.65rem] font-bold">
-      <div className="hidden md:flex gap-8">
-        <a href="#practice" className="hover:text-primary transition-colors">Prática</a>
-        <a href="#messengers" className="hover:text-primary transition-colors">Mensageiros</a>
-        <a href="#quantum" className="hover:text-primary transition-colors">Quântica</a>
+      <div className="hidden md:flex gap-6">
+        <a href="/#messengers" className="hover:text-primary transition-colors">Mensageiros</a>
+        <a href="/#quantum" className="hover:text-primary transition-colors">Quântica</a>
+        <a href="/#pillars" className="hover:text-primary transition-colors">Pilares</a>
+        <a href="/#sabedoria" className="hover:text-primary transition-colors">Sabedoria</a>
       </div>
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="font-serif-display text-xl tracking-widest text-primary"
       >
-        Aura Sagrada
+        <Link to="/" className="font-serif-display text-xl tracking-widest text-primary">
+          Aura Sagrada
+        </Link>
       </motion.div>
-      <div className="hidden md:flex gap-8">
-        <a href="#pillars" className="hover:text-primary transition-colors">Pilares</a>
-        <a href="#offerings" className="hover:text-primary transition-colors">Caminhos</a>
-        <a href="#contact" className="hover:text-primary transition-colors">Contato</a>
+      <div className="hidden md:flex gap-6">
+        <Link to="/meditacoes" className="hover:text-primary transition-colors">Meditações</Link>
+        <a href="/#offerings" className="hover:text-primary transition-colors">Caminhos</a>
+        <a href="/#contact" className="hover:text-primary transition-colors">Contato</a>
       </div>
       <button
         className="md:hidden text-foreground"
@@ -41,14 +44,15 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="absolute top-full left-0 right-0 bg-background border-b border-border p-6 flex flex-col gap-4 md:hidden"
+          className="absolute top-full left-0 right-0 bg-background border-b border-border p-6 flex flex-col gap-4 md:hidden z-20"
         >
-          <a href="#practice" className="hover:text-primary transition-colors" onClick={() => setMenuOpen(false)}>Prática</a>
-          <a href="#messengers" className="hover:text-primary transition-colors" onClick={() => setMenuOpen(false)}>Mensageiros</a>
-          <a href="#quantum" className="hover:text-primary transition-colors" onClick={() => setMenuOpen(false)}>Quântica</a>
-          <a href="#pillars" className="hover:text-primary transition-colors" onClick={() => setMenuOpen(false)}>Pilares</a>
-          <a href="#offerings" className="hover:text-primary transition-colors" onClick={() => setMenuOpen(false)}>Caminhos</a>
-          <a href="#contact" className="hover:text-primary transition-colors" onClick={() => setMenuOpen(false)}>Contato</a>
+          <a href="/#messengers" className="hover:text-primary transition-colors" onClick={() => setMenuOpen(false)}>Mensageiros</a>
+          <a href="/#quantum" className="hover:text-primary transition-colors" onClick={() => setMenuOpen(false)}>Quântica</a>
+          <a href="/#pillars" className="hover:text-primary transition-colors" onClick={() => setMenuOpen(false)}>Pilares</a>
+          <a href="/#sabedoria" className="hover:text-primary transition-colors" onClick={() => setMenuOpen(false)}>Sabedoria</a>
+          <Link to="/meditacoes" className="hover:text-primary transition-colors" onClick={() => setMenuOpen(false)}>Meditações</Link>
+          <a href="/#offerings" className="hover:text-primary transition-colors" onClick={() => setMenuOpen(false)}>Caminhos</a>
+          <a href="/#contact" className="hover:text-primary transition-colors" onClick={() => setMenuOpen(false)}>Contato</a>
         </motion.div>
       )}
     </nav>
