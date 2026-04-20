@@ -55,12 +55,13 @@ const Sabedoria = () => {
   return (
     <section id="sabedoria" className="relative z-10 overflow-hidden">
       <div className="relative py-24 md:py-40 px-6 md:px-12 bg-background">
-        <div
-          className="absolute inset-0 opacity-[0.08] bg-cover bg-center pointer-events-none"
-          style={{ backgroundImage: `url(${treeImg})` }}
-          aria-hidden="true"
+        <img
+          src={treeImg}
+          alt=""
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.18]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/40 to-background pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/55 to-background pointer-events-none" />
 
         <div className="relative z-10 max-w-[1440px] mx-auto">
           <motion.div
