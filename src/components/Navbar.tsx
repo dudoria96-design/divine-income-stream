@@ -24,6 +24,7 @@ const Navbar = () => {
       </motion.div>
       <div className="hidden md:flex gap-6">
         <Link to="/meditacoes" className="hover:text-primary transition-colors">Meditações</Link>
+        <Link to="/eternidade" className="hover:text-primary transition-colors">Eternidade</Link>
         <a href="/#offerings" className="hover:text-primary transition-colors">Caminhos</a>
         <a href="/#contact" className="hover:text-primary transition-colors">Contato</a>
       </div>
@@ -51,6 +52,7 @@ const Navbar = () => {
           <a href="/#pillars" className="hover:text-primary transition-colors" onClick={() => setMenuOpen(false)}>Pilares</a>
           <a href="/#sabedoria" className="hover:text-primary transition-colors" onClick={() => setMenuOpen(false)}>Sabedoria</a>
           <Link to="/meditacoes" className="hover:text-primary transition-colors" onClick={() => setMenuOpen(false)}>Meditações</Link>
+          <Link to="/eternidade" className="hover:text-primary transition-colors" onClick={() => setMenuOpen(false)}>Eternidade</Link>
           <a href="/#offerings" className="hover:text-primary transition-colors" onClick={() => setMenuOpen(false)}>Caminhos</a>
           <a href="/#contact" className="hover:text-primary transition-colors" onClick={() => setMenuOpen(false)}>Contato</a>
         </motion.div>

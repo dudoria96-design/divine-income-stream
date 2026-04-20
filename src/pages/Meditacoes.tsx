@@ -147,6 +147,45 @@ const Meditacoes = () => {
               ))}
             </div>
           )}
+
+          {!loading && totalPages > 1 && (
+            <nav className="mt-16 flex flex-wrap items-center justify-center gap-2" aria-label="Paginação">
+              <button
+                onClick={() => safePage > 1 && goToPage(safePage - 1)}
+                disabled={safePage === 1}
+                className="text-[0.65rem] uppercase tracking-widest px-4 py-2 border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+              >
+                ← Anterior
+              </button>
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+                <button
+                  key={p}
+                  onClick={() => goToPage(p)}
+                  aria-current={p === safePage ? "page" : undefined}
+                  className={`text-[0.65rem] uppercase tracking-widest min-w-[2.5rem] px-3 py-2 border transition-colors ${
+                    p === safePage
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : "border-border text-muted-foreground hover:text-primary hover:border-primary"
+                  }`}
+                >
+                  {String(p).padStart(2, "0")}
+                </button>
+              ))}
+              <button
+                onClick={() => safePage < totalPages && goToPage(safePage + 1)}
+                disabled={safePage === totalPages}
+                className="text-[0.65rem] uppercase tracking-widest px-4 py-2 border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+              >
+                Próxima →
+              </button>
+            </nav>
+          )}
+
+          {!loading && filtered.length > 0 && (
+            <p className="mt-6 text-center text-[0.6rem] uppercase tracking-[0.25em] text-muted-foreground">
+              Página {safePage} de {totalPages} · {filtered.length} meditaç{filtered.length === 1 ? "ão" : "ões"}
+            </p>
+          )}
         </div>
       </section>
 
