@@ -1,8 +1,9 @@
+import React from "react";
 import { motion } from "framer-motion";
 
-const Footer = () => {
+const Footer = React.forwardRef<HTMLElement>((_props, ref) => {
   return (
-    <footer id="contact" className="relative z-10 bg-stone-dark py-16 md:py-24 px-6 md:px-12 text-primary-foreground">
+    <footer ref={ref} id="contact" className="relative z-10 bg-stone-dark py-16 md:py-24 px-6 md:px-12 text-primary-foreground">
       <div className="max-w-[1440px] mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
@@ -47,6 +48,8 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+});
+
+Footer.displayName = "Footer";
 
 export default Footer;

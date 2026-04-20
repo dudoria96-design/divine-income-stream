@@ -55,10 +55,11 @@ const Eternidade = () => {
         <motion.img
           src={leaoImg}
           alt="O Leão de Judá — guardião do Templo eterno"
-          style={{ scale: heroScale, opacity: heroOpacity }}
+          loading="eager"
+          style={{ scale: heroScale, opacity: useTransform(scrollYProgress, [0, 0.8], [0.82, 0.18]) }}
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/10 to-background pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/18 via-background/8 to-background pointer-events-none" />
 
         <motion.div
           style={{ y: titleY }}
@@ -102,16 +103,18 @@ const Eternidade = () => {
                 isDark ? "bg-stone-dark text-primary-foreground" : "bg-background text-foreground"
               }`}
             >
-              <div
-                className="absolute inset-0 bg-cover bg-center pointer-events-none"
-                style={{ backgroundImage: `url(${bgImage})`, opacity: isDark ? 0.18 : 0.1 }}
-                aria-hidden="true"
+              <img
+                src={bgImage}
+                alt=""
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                style={{ opacity: isDark ? 0.28 : 0.2 }}
               />
               <div
                 className={`absolute inset-0 pointer-events-none ${
                   isDark
-                    ? "bg-gradient-to-b from-stone-dark/70 via-stone-dark/50 to-stone-dark"
-                    : "bg-gradient-to-b from-background via-background/40 to-background"
+                    ? "bg-gradient-to-b from-stone-dark/78 via-stone-dark/58 to-stone-dark/94"
+                    : "bg-gradient-to-b from-background/24 via-background/58 to-background/92"
                 }`}
               />
 
