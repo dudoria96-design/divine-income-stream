@@ -1,8 +1,9 @@
+import React from "react";
 import { motion } from "framer-motion";
 
-const Testimonial = () => {
+const Testimonial = React.forwardRef<HTMLElement>((_props, ref) => {
   return (
-    <section id="testimonial" className="relative z-10 py-24 md:py-40 px-6 md:px-12">
+    <section ref={ref} id="testimonial" className="relative z-10 py-24 md:py-40 px-6 md:px-12">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -25,6 +26,8 @@ const Testimonial = () => {
       </motion.div>
     </section>
   );
-};
+});
+
+Testimonial.displayName = "Testimonial";
 
 export default Testimonial;
