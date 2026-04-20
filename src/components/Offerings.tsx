@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import curriculumImg from "@/assets/offering-curriculum.jpg";
-import consultationImg from "@/assets/offering-consultation.jpg";
-import transmissionImg from "@/assets/offering-transmission.jpg";
+import curriculumImg from "@/assets/caminho-messias.jpg";
+import consultationImg from "@/assets/caminho-quantico.jpg";
+import transmissionImg from "@/assets/caminho-divino.jpg";
 
 const offerings = [
   {
@@ -57,33 +57,31 @@ const Offerings = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.7, delay: i * 0.15 }}
-            className="bg-background p-8 md:p-12 relative group hover:bg-secondary/50 transition-colors duration-700"
+            className="relative min-h-[34rem] overflow-hidden group"
           >
-            <div className="absolute top-0 left-0 w-1 h-0 bg-primary group-hover:h-full transition-all duration-700 ease-in-out" />
+            <img
+              src={offering.image}
+              loading="lazy"
+              alt={offering.title}
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/55 to-background/90 group-hover:via-background/45 transition-colors duration-700" />
+            <div className="absolute top-0 left-0 w-1 h-0 bg-primary group-hover:h-full transition-all duration-700 ease-in-out z-10" />
 
-            <div className="text-primary uppercase tracking-[0.2em] text-[0.65rem] font-bold mb-8 md:mb-16">
-              {offering.number} — {offering.label}
-            </div>
+            <div className="relative z-10 h-full p-8 md:p-12 flex flex-col justify-end">
+              <div className="text-primary uppercase tracking-[0.2em] text-[0.65rem] font-bold mb-8 md:mb-16">
+                {offering.number} — {offering.label}
+              </div>
 
-            <div className="aspect-[4/3] rounded-lg overflow-hidden mb-8 bg-alabaster-dim">
-              <img
-                src={offering.image}
-                loading="lazy"
-                width={800}
-                height={800}
-                alt={offering.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
-
-            <h3 className="text-2xl md:text-3xl mb-4 md:mb-6 group-hover:text-primary transition-colors duration-500">
-              {offering.title}
-            </h3>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-8 md:mb-12">
-              {offering.description}
-            </p>
-            <div className="text-xs uppercase tracking-widest pb-2 border-b border-foreground/20 inline-block cursor-pointer hover:text-primary hover:border-primary transition-colors">
-              {offering.cta}
+              <h3 className="text-2xl md:text-3xl mb-4 md:mb-6 group-hover:text-primary transition-colors duration-500">
+                {offering.title}
+              </h3>
+              <p className="text-foreground/80 text-sm leading-relaxed mb-8 md:mb-12 max-w-sm">
+                {offering.description}
+              </p>
+              <div className="text-xs uppercase tracking-widest pb-2 border-b border-foreground/20 inline-block cursor-pointer hover:text-primary hover:border-primary transition-colors w-fit">
+                {offering.cta}
+              </div>
             </div>
           </motion.div>
         ))}
@@ -93,3 +91,4 @@ const Offerings = () => {
 };
 
 export default Offerings;
+
