@@ -15,11 +15,14 @@ interface Meditation {
   duration: string | null;
 }
 
+const PAGE_SIZE = 9;
+
 const Meditacoes = () => {
   const [meditations, setMeditations] = useState<Meditation[]>([]);
   const [loading, setLoading] = useState(true);
   const [active, setActive] = useState<Meditation | null>(null);
   const [filter, setFilter] = useState<string>("Todas");
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     document.title = "Meditações · Aura Sagrada";
@@ -33,12 +36,24 @@ const Meditacoes = () => {
     })();
   }, []);
 
+  useEffect(() => {
+    setPage(1);
+  }, [filter]);
+
   const categories = useMemo(() => {
     const set = new Set(meditations.map((m) => m.category));
     return ["Todas", ...Array.from(set)];
   }, [meditations]);
 
-  const visible = filter === "Todas" ? meditations : meditations.filter((m) => m.category === filter);
+  const filtered = filter === "Todas" ? meditations : meditations.filter((m) => m.category === filter);
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const safePage = Math.min(page, totalPages);
+  const visible = filtered.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE);
+
+  const goToPage = (p: number) => {
+    setPage(p);
+    if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
