@@ -26,6 +26,7 @@ const Footer = () => {
               <li><a href="/#pillars" className="hover:text-primary transition-colors">Sete Pilares da Luz</a></li>
               <li><a href="/#sabedoria" className="hover:text-primary transition-colors">Sabedoria Eterna</a></li>
               <li><a href="/meditacoes" className="hover:text-primary transition-colors">Meditações</a></li>
+              <li><a href="/eternidade" className="hover:text-primary transition-colors">Eternidade · Conquista do Templo</a></li>
             </ul>
           </div>
 

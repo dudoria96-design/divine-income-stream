@@ -15,11 +15,14 @@ interface Meditation {
   duration: string | null;
 }
 
+const PAGE_SIZE = 9;
+
 const Meditacoes = () => {
   const [meditations, setMeditations] = useState<Meditation[]>([]);
   const [loading, setLoading] = useState(true);
   const [active, setActive] = useState<Meditation | null>(null);
   const [filter, setFilter] = useState<string>("Todas");
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     document.title = "Meditações · Aura Sagrada";
@@ -33,12 +36,24 @@ const Meditacoes = () => {
     })();
   }, []);
 
+  useEffect(() => {
+    setPage(1);
+  }, [filter]);
+
   const categories = useMemo(() => {
     const set = new Set(meditations.map((m) => m.category));
     return ["Todas", ...Array.from(set)];
   }, [meditations]);
 
-  const visible = filter === "Todas" ? meditations : meditations.filter((m) => m.category === filter);
+  const filtered = filter === "Todas" ? meditations : meditations.filter((m) => m.category === filter);
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const safePage = Math.min(page, totalPages);
+  const visible = filtered.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE);
+
+  const goToPage = (p: number) => {
+    setPage(p);
+    if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -131,6 +146,45 @@ const Meditacoes = () => {
                 </motion.button>
               ))}
             </div>
+          )}
+
+          {!loading && totalPages > 1 && (
+            <nav className="mt-16 flex flex-wrap items-center justify-center gap-2" aria-label="Paginação">
+              <button
+                onClick={() => safePage > 1 && goToPage(safePage - 1)}
+                disabled={safePage === 1}
+                className="text-[0.65rem] uppercase tracking-widest px-4 py-2 border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+              >
+                ← Anterior
+              </button>
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+                <button
+                  key={p}
+                  onClick={() => goToPage(p)}
+                  aria-current={p === safePage ? "page" : undefined}
+                  className={`text-[0.65rem] uppercase tracking-widest min-w-[2.5rem] px-3 py-2 border transition-colors ${
+                    p === safePage
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : "border-border text-muted-foreground hover:text-primary hover:border-primary"
+                  }`}
+                >
+                  {String(p).padStart(2, "0")}
+                </button>
+              ))}
+              <button
+                onClick={() => safePage < totalPages && goToPage(safePage + 1)}
+                disabled={safePage === totalPages}
+                className="text-[0.65rem] uppercase tracking-widest px-4 py-2 border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+              >
+                Próxima →
+              </button>
+            </nav>
+          )}
+
+          {!loading && filtered.length > 0 && (
+            <p className="mt-6 text-center text-[0.6rem] uppercase tracking-[0.25em] text-muted-foreground">
+              Página {safePage} de {totalPages} · {filtered.length} meditaç{filtered.length === 1 ? "ão" : "ões"}
+            </p>
           )}
         </div>
       </section>
