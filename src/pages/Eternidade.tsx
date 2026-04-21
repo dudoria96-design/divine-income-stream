@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Footer from "@/components/Footer";
+import { useIsMobile } from "@/hooks/use-mobile";
 import leaoImg from "@/assets/leao-dourado.jpg";
 import templeImg from "@/assets/sabedoria-temple.jpg";
 import lotusImg from "@/assets/sabedoria-lotus.jpg";
@@ -36,6 +37,7 @@ const steps = [
 
 const Eternidade = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const heroScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [0.55, 0]);
@@ -44,6 +46,10 @@ const Eternidade = () => {
   useEffect(() => {
     document.title = "Eternidade · A Conquista do Templo · Divino Eu";
   }, []);
+
+  // Ajuste de foco responsivo: mobile mostra mais do topo (olhos), desktop centraliza mais
+  const heroObjectPosition = isMobile ? "object-[center_8%]" : "object-[center_25%]";
+  const heroMobileScale = isMobile ? "scale-110" : "scale-100";
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -54,7 +60,7 @@ const Eternidade = () => {
           alt="O Leão de Judá — guardião do Templo eterno"
           loading="eager"
           style={{ scale: heroScale, opacity: useTransform(scrollYProgress, [0, 0.8], [0.82, 0.18]) }}
-          className="absolute inset-0 w-full h-full object-cover object-[center_25%]"
+          className={`absolute inset-0 w-full h-full object-cover ${heroObjectPosition} ${heroMobileScale}`}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/18 via-background/8 to-background pointer-events-none" />
 
