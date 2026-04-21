@@ -145,7 +145,7 @@ const Admin = () => {
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b border-border px-6 md:px-12 py-6 flex items-center justify-between">
-        <Link to="/" className="font-serif-display text-xl text-primary tracking-widest">Aura Sagrada</Link>
+        <Link to="/" className="font-serif-display text-xl text-primary tracking-widest">Divino Eu</Link>
         <div className="flex items-center gap-4">
           <span className="text-xs text-muted-foreground hidden md:inline">{userEmail}</span>
           <Link to="/meditacoes" className="text-xs uppercase tracking-widest text-muted-foreground hover:text-primary">Ver público</Link>

@@ -43,7 +43,7 @@ const Eternidade = () => {
   const titleY = useTransform(scrollYProgress, [0, 1], [0, 120]);
 
   useEffect(() => {
-    document.title = "Eternidade · A Conquista do Templo · Aura Sagrada";
+    document.title = "Eternidade · A Conquista do Templo · Divino Eu";
   }, []);
 
   return (
