@@ -59,7 +59,7 @@ const Navbar = () => {
           className="font-serif-display text-xl md:text-2xl tracking-[0.18em] text-primary relative group"
           style={{ textShadow: "0 0 24px hsl(var(--primary) / 0.35)" }}
         >
-          Divino Eu
+          A sagrada Arquitetura
           <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary group-hover:w-full transition-all duration-500" />
         </Link>
 
