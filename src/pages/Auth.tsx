@@ -14,7 +14,7 @@ const Auth = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    document.title = "Acesso · Aura Sagrada";
+    document.title = "Acesso · Divino Eu";
     supabase.auth.getSession().then(({ data }) => {
       if (data.session) navigate("/admin", { replace: true });
     });
@@ -49,7 +49,7 @@ const Auth = () => {
     <div className="min-h-screen bg-background flex items-center justify-center px-6">
       <div className="w-full max-w-md">
         <Link to="/" className="block text-center mb-10 font-serif-display text-2xl text-primary tracking-widest">
-          Aura Sagrada
+          Divino Eu
         </Link>
         <div className="bg-alabaster-dim p-8 md:p-10 border border-border">
           <div className="text-[0.6rem] uppercase tracking-[0.3em] text-primary font-bold mb-3">

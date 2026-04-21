@@ -19,7 +19,7 @@ const Navbar = () => {
         transition={{ duration: 0.8 }}
       >
         <Link to="/" className="font-serif-display text-xl tracking-widest text-primary">
-          Aura Sagrada
+          Divino Eu
         </Link>
       </motion.div>
       <div className="hidden md:flex gap-6">

@@ -139,7 +139,7 @@ const Messengers = () => {
               </p>
             </div>
             <div className="relative z-10 text-[0.65rem] uppercase tracking-widest opacity-60 pt-8">
-              Aura Sagrada
+              Divino Eu
             </div>
           </motion.div>
         </div>

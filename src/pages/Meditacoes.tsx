@@ -25,7 +25,7 @@ const Meditacoes = () => {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    document.title = "Meditações · Aura Sagrada";
+    document.title = "Meditações · Divino Eu";
     (async () => {
       const { data } = await supabase
         .from("meditations")
