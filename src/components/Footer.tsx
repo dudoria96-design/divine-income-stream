@@ -13,7 +13,7 @@ const Footer = React.forwardRef<HTMLElement>((_props, ref) => {
           className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 mb-16"
         >
           <div>
-            <h3 className="font-serif-display text-2xl text-primary mb-4">Divino Eu</h3>
+            <h3 className="font-serif-display text-2xl text-primary mb-4">A sagrada Arquitetura</h3>
             <p className="text-sm leading-relaxed opacity-70 max-w-xs">
               Iluminar, dilacerar as trevas e guiar o reencontro com o Eu Divino. Um espaço gratuito de sabedoria universal — os grandes mestres, a ciência e a luz do Deus único.
             </p>
@@ -42,7 +42,7 @@ const Footer = React.forwardRef<HTMLElement>((_props, ref) => {
         </motion.div>
 
         <div className="border-t border-primary/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-50">
-          <span>© 2026 Divino Eu. Todo conhecimento é livre.</span>
+          <span>© 2026 A sagrada Arquitetura. Todo conhecimento é livre.</span>
           <span className="uppercase tracking-widest">Caminhando na luz divina</span>
         </div>
       </div>

@@ -86,7 +86,8 @@ const Eternidade = () => {
           style={{ scale: heroScale, opacity: useTransform(scrollYProgress, [0, 0.8], [0.82, 0.18]) }}
           className={`absolute inset-0 w-full h-full object-cover ${heroObjectPosition} ${heroMobileScale}`}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/18 via-background/8 to-background pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background/95 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30 pointer-events-none" />
 
         <motion.div
           style={{ y: titleY }}
