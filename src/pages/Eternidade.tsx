@@ -38,6 +38,7 @@ const steps = [
 const Eternidade = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const heroScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [0.55, 0]);
@@ -45,11 +46,34 @@ const Eternidade = () => {
 
   useEffect(() => {
     document.title = "Eternidade · A Conquista do Templo · Divino Eu";
+    
+    // Detecta telas muito pequenas (320-375px)
+    const checkSmallScreen = () => {
+      setIsSmallScreen(window.innerWidth <= 375);
+    };
+    checkSmallScreen();
+    window.addEventListener("resize", checkSmallScreen);
+    return () => window.removeEventListener("resize", checkSmallScreen);
   }, []);
 
-  // Ajuste de foco responsivo: mobile mostra mais do topo (olhos), desktop centraliza mais
-  const heroObjectPosition = isMobile ? "object-[center_8%]" : "object-[center_25%]";
-  const heroMobileScale = isMobile ? "scale-110" : "scale-100";
+  // Ajuste de foco responsivo granular
+  // Telas 320-375px: foco máximo no topo (olhos), zoom maior
+  // Telas 376-767px: foco no topo com zoom moderado  
+  // Desktop: foco equilibrado
+  const heroObjectPosition = isSmallScreen 
+    ? "object-[center_2%]" 
+    : isMobile 
+      ? "object-[center_8%]" 
+      : "object-[center_25%]";
+  
+  const heroMobileScale = isSmallScreen 
+    ? "scale-125" 
+    : isMobile 
+      ? "scale-110" 
+      : "scale-100";
+  
+  // Altura adaptativa para telas pequenas
+  const heroHeight = isSmallScreen ? "h-[75vh]" : "h-[85vh] md:h-[100vh]";
 
   return (
     <div className="min-h-screen bg-background text-foreground">
