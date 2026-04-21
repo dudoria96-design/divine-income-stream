@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { supabase } from "@/integrations/supabase/client";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import bgImg from "@/assets/meditacoes-bg.jpg";
 
@@ -57,8 +56,6 @@ const Meditacoes = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
-
       <header className="relative px-6 md:px-12 py-20 md:py-32 overflow-hidden">
         <img src={bgImg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-25" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background pointer-events-none" />
