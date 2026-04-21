@@ -78,7 +78,7 @@ const Eternidade = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* HERO — Leão Dourado */}
-      <section ref={heroRef} className="relative h-[85vh] md:h-[100vh] overflow-hidden flex items-center justify-center">
+      <section ref={heroRef} className={`relative ${heroHeight} overflow-hidden flex items-center justify-center`}>
         <motion.img
           src={leaoImg}
           alt="O Leão de Judá — guardião do Templo eterno"
