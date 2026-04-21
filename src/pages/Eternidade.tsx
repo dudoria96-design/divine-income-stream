@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import leaoImg from "@/assets/leao-dourado.jpg";
 import templeImg from "@/assets/sabedoria-temple.jpg";
@@ -48,8 +47,6 @@ const Eternidade = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
-
       {/* HERO — Leão Dourado */}
       <section ref={heroRef} className="relative h-[85vh] md:h-[100vh] overflow-hidden flex items-center justify-center">
         <motion.img

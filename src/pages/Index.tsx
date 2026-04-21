@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Foundation from "@/components/Foundation";
 import Messengers from "@/components/Messengers";
@@ -12,7 +11,6 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden relative">
-      <Navbar />
       <Hero />
       <Foundation />
       <Messengers />
