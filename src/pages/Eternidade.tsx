@@ -54,7 +54,7 @@ const Eternidade = () => {
           alt="O Leão de Judá — guardião do Templo eterno"
           loading="eager"
           style={{ scale: heroScale, opacity: useTransform(scrollYProgress, [0, 0.8], [0.82, 0.18]) }}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-[center_25%]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/18 via-background/8 to-background pointer-events-none" />
 
