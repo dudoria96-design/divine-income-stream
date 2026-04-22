@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useT } from "@/i18n/LanguageContext";
 
 const Foundation = () => {
+  const { t } = useT();
   return (
     <section className="relative z-10 bg-stone-dark py-24 md:py-40 px-6 md:px-12 text-primary-foreground">
       <div className="absolute top-0 left-6 md:left-12 w-px h-full bg-primary opacity-20" />
@@ -14,16 +16,16 @@ const Foundation = () => {
         className="max-w-4xl mx-auto text-center"
       >
         <div className="text-primary uppercase tracking-[0.3em] text-[0.65rem] font-bold mb-8 md:mb-12">
-          A Fundação
+          {t<string>("foundation.eyebrow")}
         </div>
         <h2 className="text-3xl md:text-5xl lg:text-6xl leading-tight text-balance mb-8 md:mb-12">
-          Você não está construindo algo novo. Está removendo a poeira de um monumento que sempre existiu.
+          {t<string>("foundation.heading")}
         </h2>
         <a
           href="#messengers"
           className="group inline-flex items-center gap-4 text-sm uppercase tracking-widest hover:text-primary transition-colors"
         >
-          <span>Iniciar a escavação</span>
+          <span>{t<string>("foundation.cta")}</span>
           <div className="w-8 h-px bg-primary-foreground group-hover:bg-primary transition-colors" />
         </a>
       </motion.div>

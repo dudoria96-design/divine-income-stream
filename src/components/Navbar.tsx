@@ -1,18 +1,21 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-
-const navLinks = [
-  { label: "Início", to: "/", type: "route" as const },
-  { label: "Caminhos", to: "/#offerings", type: "hash" as const },
-  { label: "Meditações", to: "/meditacoes", type: "route" as const },
-  { label: "Eternidade", to: "/eternidade", type: "route" as const },
-];
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useT } from "@/i18n/LanguageContext";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { t } = useT();
+
+  const navLinks = [
+    { label: t<string>("nav.home"), to: "/", type: "route" as const },
+    { label: t<string>("nav.paths"), to: "/#offerings", type: "hash" as const },
+    { label: t<string>("nav.meditations"), to: "/meditacoes", type: "route" as const },
+    { label: t<string>("nav.eternity"), to: "/eternidade", type: "route" as const },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -59,24 +62,25 @@ const Navbar = () => {
           className="font-serif-display text-xl md:text-2xl tracking-[0.18em] text-primary relative group"
           style={{ textShadow: "0 0 24px hsl(var(--primary) / 0.35)" }}
         >
-          A sagrada Arquitetura
+          {t<string>("nav.brand")}
           <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary group-hover:w-full transition-all duration-500" />
         </Link>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {navLinks.map((link) => renderLink(link))}
+          <LanguageSwitcher />
           <Link
             to="/auth"
-            className="ml-2 border border-primary/70 text-primary px-5 py-2 rounded-full text-[0.7rem] uppercase tracking-[0.22em] font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-[0_0_24px_hsl(var(--primary)/0.45)]"
+            className="border border-primary/70 text-primary px-5 py-2 rounded-full text-[0.7rem] uppercase tracking-[0.22em] font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-[0_0_24px_hsl(var(--primary)/0.45)]"
           >
-            Portal
+            {t<string>("nav.portal")}
           </Link>
         </div>
 
         <button
           className="md:hidden text-foreground p-1"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Menu"
+          aria-label={t<string>("nav.menu")}
         >
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
             {menuOpen ? <path d="M18 6L6 18M6 6l12 12" /> : <path d="M3 12h18M3 6h18M3 18h18" />}
@@ -95,12 +99,13 @@ const Navbar = () => {
           >
             <div className="flex flex-col gap-5 px-6 py-6">
               {navLinks.map((link) => renderLink(link, () => setMenuOpen(false)))}
+              <div className="pt-2"><LanguageSwitcher /></div>
               <Link
                 to="/auth"
                 onClick={() => setMenuOpen(false)}
                 className="border border-primary/70 text-primary px-5 py-2.5 rounded-full text-[0.7rem] uppercase tracking-[0.22em] font-medium text-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
-                Portal
+                {t<string>("nav.portal")}
               </Link>
             </div>
           </motion.div>

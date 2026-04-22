@@ -1,52 +1,15 @@
 import { motion } from "framer-motion";
 import pillarsImg from "@/assets/pillars-scripture.jpg";
+import { useT } from "@/i18n/LanguageContext";
 
-const pillars = [
-  {
-    n: "I",
-    title: "A Luz do Mundo",
-    verse: "Eu sou a luz do mundo; quem me segue não andará em trevas, mas terá a luz da vida.",
-    ref: "João 8:12",
-  },
-  {
-    n: "II",
-    title: "A Luz Resplandece",
-    verse: "A luz resplandece nas trevas, e as trevas não prevaleceram contra ela.",
-    ref: "João 1:5",
-  },
-  {
-    n: "III",
-    title: "Tesouros no Céu",
-    verse: "Ajuntai tesouros no céu, onde nem a traça nem a ferrugem consomem.",
-    ref: "Mateus 6:20",
-  },
-  {
-    n: "IV",
-    title: "Fome de Justiça",
-    verse: "Bem-aventurados os que têm fome e sede de justiça, porque eles serão fartos.",
-    ref: "Mateus 5:6",
-  },
-  {
-    n: "V",
-    title: "A Quietude",
-    verse: "Aquietai-vos e sabei que Eu sou Deus.",
-    ref: "Salmos 46:10",
-  },
-  {
-    n: "VI",
-    title: "O Caminho",
-    verse: "Eu sou o caminho, a verdade e a vida.",
-    ref: "João 14:6",
-  },
-  {
-    n: "VII",
-    title: "Sede a Luz",
-    verse: "Sede vós mesmos a vossa luz. Buscai refúgio em vós mesmos.",
-    ref: "Buda · Mahaparinibbana",
-  },
-];
+const numerals = ["I", "II", "III", "IV", "V", "VI", "VII"];
+
+type P = { title: string; verse: string; ref: string };
 
 const Pillars = () => {
+  const { t } = useT();
+  const pillars = t<P[]>("pillars.list");
+
   return (
     <section id="pillars" className="relative z-10 py-24 md:py-48 px-6 md:px-12 bg-background">
       <div className="max-w-[1440px] mx-auto">
@@ -59,18 +22,16 @@ const Pillars = () => {
         >
           <div className="md:col-span-8">
             <div className="text-primary uppercase tracking-[0.3em] text-[0.65rem] font-bold mb-6">
-              Os Sete Pilares da Luz
+              {t<string>("pillars.eyebrow")}
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-balance">
-              Palavras que sustentam
+              {t<string>("pillars.heading1")}
               <br />
-              <span className="italic text-primary">o templo interior.</span>
+              <span className="italic text-primary">{t<string>("pillars.heading2")}</span>
             </h2>
           </div>
           <div className="md:col-span-4">
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Sete versículos para meditar — colunas vivas que sustentam a arquitetura sagrada de quem caminha na luz.
-            </p>
+            <p className="text-muted-foreground text-sm leading-relaxed">{t<string>("pillars.lede")}</p>
           </div>
         </motion.div>
 
@@ -89,7 +50,7 @@ const Pillars = () => {
                 loading="lazy"
                 width={1024}
                 height={1024}
-                alt="Sete pilares dourados sustentando o templo da luz"
+                alt={t<string>("pillars.imageAlt")}
                 className="w-full h-full object-cover grayscale-[20%] mix-blend-multiply opacity-90"
               />
               <div className="absolute inset-0 ring-1 ring-inset ring-foreground/10" />
@@ -99,7 +60,7 @@ const Pillars = () => {
           <div className="md:col-span-8 space-y-px bg-foreground/10 border border-foreground/10">
             {pillars.map((p, i) => (
               <motion.article
-                key={p.n}
+                key={i}
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
@@ -108,7 +69,7 @@ const Pillars = () => {
               >
                 <div className="col-span-2 md:col-span-1">
                   <div className="font-serif-display text-3xl md:text-4xl text-primary leading-none">
-                    {p.n}
+                    {numerals[i]}
                   </div>
                 </div>
                 <div className="col-span-10 md:col-span-11">
@@ -118,9 +79,7 @@ const Pillars = () => {
                   <p className="font-serif-display text-lg md:text-xl leading-snug text-balance mb-3 group-hover:text-primary transition-colors duration-500">
                     "{p.verse}"
                   </p>
-                  <div className="text-[0.65rem] uppercase tracking-widest text-primary font-bold">
-                    {p.ref}
-                  </div>
+                  <div className="text-[0.65rem] uppercase tracking-widest text-primary font-bold">{p.ref}</div>
                 </div>
               </motion.article>
             ))}
