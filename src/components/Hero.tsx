@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-sacred.jpg";
+import { useT } from "@/i18n/LanguageContext";
 
 const Hero = () => {
+  const { t } = useT();
   return (
     <header id="practice" className="relative z-10 px-6 md:px-12 pt-12 md:pt-24 pb-24 md:pb-48 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-6 items-end">
       <div className="absolute -top-[20%] -right-[10%] w-[60vw] h-[60vw] rounded-full bg-background/60 blur-[120px] pointer-events-none mix-blend-overlay" />
@@ -14,11 +16,11 @@ const Hero = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="text-5xl sm:text-6xl lg:text-[7.5rem] leading-[0.9] text-balance mb-8 md:mb-12"
         >
-          A sagrada{" "}
+          {t<string>("hero.title1")}{" "}
           <br />
-          <span className="italic text-muted-foreground">arquitetura</span>
+          <span className="italic text-muted-foreground">{t<string>("hero.title2")}</span>
           <br />
-          de si mesmo.
+          {t<string>("hero.title3")}
         </motion.h1>
         <motion.div
           initial={{ opacity: 0 }}
@@ -28,7 +30,7 @@ const Hero = () => {
         >
           <div className="w-12 h-px bg-primary shrink-0 mt-3" />
           <p className="text-muted-foreground text-sm leading-relaxed">
-            Desenterre a sabedoria atemporal codificada no seu ser. Um santuário de conhecimento unindo os ensinamentos de todos os Messias Solares, física quântica e a luz do Deus único.
+            {t<string>("hero.lede")}
           </p>
         </motion.div>
         <motion.div
@@ -41,7 +43,7 @@ const Hero = () => {
             href="#messengers"
             className="group flex items-center gap-4 text-sm uppercase tracking-widest hover:text-primary transition-colors font-medium"
           >
-            <span>Iniciar a jornada</span>
+            <span>{t<string>("hero.cta")}</span>
             <div className="w-8 h-px bg-foreground group-hover:bg-primary transition-colors" />
           </a>
         </motion.div>
@@ -59,7 +61,7 @@ const Hero = () => {
             src={heroImage}
             width={800}
             height={1024}
-            alt="Arquitetura sagrada com luz divina dourada"
+            alt={t<string>("hero.imageAlt")}
             className="w-full h-full object-cover grayscale-[30%] mix-blend-multiply opacity-80"
           />
           <div className="absolute inset-0 ring-1 ring-inset ring-foreground/10" />
