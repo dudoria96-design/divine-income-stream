@@ -69,12 +69,6 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {navLinks.map((link) => renderLink(link))}
           <LanguageSwitcher />
-          <Link
-            to="/auth"
-            className="border border-primary/70 text-primary px-5 py-2 rounded-full text-[0.7rem] uppercase tracking-[0.22em] font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-[0_0_24px_hsl(var(--primary)/0.45)]"
-          >
-            {t<string>("nav.portal")}
-          </Link>
         </div>
 
         <button
@@ -100,13 +94,6 @@ const Navbar = () => {
             <div className="flex flex-col gap-5 px-6 py-6">
               {navLinks.map((link) => renderLink(link, () => setMenuOpen(false)))}
               <div className="pt-2"><LanguageSwitcher /></div>
-              <Link
-                to="/auth"
-                onClick={() => setMenuOpen(false)}
-                className="border border-primary/70 text-primary px-5 py-2.5 rounded-full text-[0.7rem] uppercase tracking-[0.22em] font-medium text-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-              >
-                {t<string>("nav.portal")}
-              </Link>
             </div>
           </motion.div>
         )}

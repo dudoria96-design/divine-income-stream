@@ -7,8 +7,6 @@ import { LanguageProvider } from "@/i18n/LanguageContext";
 import Navbar from "@/components/Navbar";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
-import Auth from "./pages/Auth.tsx";
-import Admin from "./pages/Admin.tsx";
 import Meditacoes from "./pages/Meditacoes.tsx";
 import Eternidade from "./pages/Eternidade.tsx";
 
@@ -27,8 +25,6 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/meditacoes" element={<Meditacoes />} />
               <Route path="/eternidade" element={<Eternidade />} />
-              <Route path="/auth" element={<Auth />} />
-              <Route path="/admin" element={<Admin />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
