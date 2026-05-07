@@ -35,8 +35,8 @@ export const translations: Record<Lang, Dict> = {
     },
     messengers: {
       eyebrow: "Os Mensageiros Solares",
-      heading1: "A mesma luz,",
-      heading2: "muitos rostos.",
+      heading1: "A mesma luz",
+      heading2: "",
       lede: "Atravessando eras, continentes e línguas, os grandes mestres trouxeram a mesma chama. Não são rivais — são raios do mesmo Sol. Todos apontam para o Deus único, supremo e amoroso que sustenta o universo.",
       unityLabel: "Unidade",
       unityBody: "Todos são apenas Um — o Deus único Se manifestando através das eras, desde o início dos tempos.",
@@ -194,8 +194,8 @@ export const translations: Record<Lang, Dict> = {
     },
     messengers: {
       eyebrow: "The Solar Messengers",
-      heading1: "The same light,",
-      heading2: "many faces.",
+      heading1: "The same light",
+      heading2: "",
       lede: "Across eras, continents, and tongues, the great masters carried the same flame. They are not rivals — they are rays of the same Sun. All point to the one, supreme, loving God who sustains the universe.",
       unityLabel: "Unity",
       unityBody: "All are simply One — the one God manifesting through the ages, since the beginning of time.",
@@ -353,8 +353,8 @@ export const translations: Record<Lang, Dict> = {
     },
     messengers: {
       eyebrow: "Los Mensajeros Solares",
-      heading1: "La misma luz,",
-      heading2: "muchos rostros.",
+      heading1: "La misma luz",
+      heading2: "",
       lede: "A través de eras, continentes y lenguas, los grandes maestros llevaron la misma llama. No son rivales — son rayos del mismo Sol. Todos apuntan al Dios único, supremo y amoroso que sostiene el universo.",
       unityLabel: "Unidad",
       unityBody: "Todos son simplemente Uno — el Dios único manifestándose a través de las eras, desde el principio del tiempo.",
@@ -512,8 +512,8 @@ export const translations: Record<Lang, Dict> = {
     },
     messengers: {
       eyebrow: "太阳信使",
-      heading1: "同一道光,",
-      heading2: "众多面容。",
+      heading1: "同一道光",
+      heading2: "",
       lede: "穿越时代、大陆与语言,伟大的导师们承载着同一束火焰。他们并非对手——他们是同一太阳的光线。皆指向那位维系宇宙的、独一、至高、慈爱的神。",
       unityLabel: "合一",
       unityBody: "众皆为一——独一神在历世代中显现,自时间之初。",
